@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace ContactProj.Data.Context
 {
-	class ContactProjContext : DbContext
+	public class ContactProjContext : DbContext
 	{
 		public DbSet<Incident> Incidents { get; set; }
 		public DbSet<Account> Accounts { get; set; }
