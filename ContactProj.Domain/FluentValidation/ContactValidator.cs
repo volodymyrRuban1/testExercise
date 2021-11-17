@@ -1,8 +1,9 @@
-﻿using FluentValidation;
+﻿using ContactProj.Domain.Entities;
+using FluentValidation;
 
-namespace ContactProj.Data.FluentValidation
+namespace ContactProj.Application.FluentValidation
 {
-	public class ContactValidator : AbstractValidator<Entities.Contact>
+	public class ContactValidator : AbstractValidator<Contact>
 	{
 		public ContactValidator()
 		{

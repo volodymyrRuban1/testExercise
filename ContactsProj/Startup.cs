@@ -1,12 +1,12 @@
+using ContactProj.Domain.Context;
+using ContactProj.Domain.Entities;
+using ContactProj.Domain.FluentValidation;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.OpenApi.Models;
-using ContactProj.Data.Context;
-using ContactProj.Data.Entities;
-using ContactProj.Data.FluentValidation;
 using FluentValidation;
 using FluentValidation.AspNetCore;
 using Microsoft.EntityFrameworkCore;

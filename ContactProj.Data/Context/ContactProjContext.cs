@@ -1,8 +1,8 @@
-﻿using ContactProj.Data.Entities;
-using ContactProj.Data.EntityConfigurations;
+﻿using ContactProj.Domain.Entities;
+using ContactProj.Domain.EntityConfigurations;
 using Microsoft.EntityFrameworkCore;
 
-namespace ContactProj.Data.Context
+namespace ContactProj.Domain.Context
 {
 	public class ContactProjContext : DbContext
 	{
@@ -16,8 +16,6 @@ namespace ContactProj.Data.Context
 
 		protected override void OnModelCreating(ModelBuilder modelBuilder)
 		{
-			modelBuilder.Entity<Incident>().Property(i => i.Name).HasDefaultValueSql("NEWID()");
-
 			modelBuilder.ApplyConfiguration(new IncidentConfiguration());
 			modelBuilder.ApplyConfiguration(new AccountConfiguration());
 			modelBuilder.ApplyConfiguration(new ContactConfiguration());

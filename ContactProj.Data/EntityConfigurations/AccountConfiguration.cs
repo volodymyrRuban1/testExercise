@@ -1,8 +1,8 @@
-﻿using ContactProj.Data.Entities;
+﻿using ContactProj.Domain.Entities;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
-namespace ContactProj.Data.EntityConfigurations
+namespace ContactProj.Domain.EntityConfigurations
 {
 	class AccountConfiguration : IEntityTypeConfiguration<Account>
 	{

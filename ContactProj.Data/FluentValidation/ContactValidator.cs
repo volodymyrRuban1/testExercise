@@ -1,6 +1,6 @@
 ﻿using FluentValidation;
 
-namespace ContactProj.Data.FluentValidation
+namespace ContactProj.Domain.FluentValidation
 {
 	public class ContactValidator : AbstractValidator<Entities.Contact>
 	{

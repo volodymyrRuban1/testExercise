@@ -1,11 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace ContactProj.Data.Entities
+namespace ContactProj.Domain.Entities
 {
 	public class Account
 	{
-		public int Id { get; set; }
+		public Guid Id { get; set; }
 
 		public string Name { get; set; }
 
