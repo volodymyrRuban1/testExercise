@@ -4,6 +4,12 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.OpenApi.Models;
+using ContactProj.Data.Context;
+using ContactProj.Data.Entities;
+using ContactProj.Data.FluentValidation;
+using FluentValidation;
+using FluentValidation.AspNetCore;
+using Microsoft.EntityFrameworkCore;
 
 namespace ContactsProj
 {
@@ -19,8 +25,17 @@ namespace ContactsProj
 		// This method gets called by the runtime. Use this method to add services to the container.
 		public void ConfigureServices(IServiceCollection services)
 		{
+			services.AddDbContext<ContactProjContext>(options =>
+				options.UseSqlServer(Configuration.GetConnectionString("ContactProj")));
 
-			services.AddControllers();
+			services.AddControllers()
+				.AddFluentValidation(configuration =>
+					configuration.RegisterValidatorsFromAssemblyContaining<Startup>());
+
+			services.AddTransient<IValidator<Incident>, IncidentValidator>();
+			services.AddTransient<IValidator<Account>, AccountValidator>();
+			services.AddTransient<IValidator<Contact>, ContactValidator>();
+
 			services.AddSwaggerGen(c =>
 			{
 				c.SwaggerDoc("v1", new OpenApiInfo { Title = "ContactsProj", Version = "v1" });

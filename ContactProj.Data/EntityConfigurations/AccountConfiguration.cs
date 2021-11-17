@@ -11,6 +11,8 @@ namespace ContactProj.Data.EntityConfigurations
 			builder.ToTable("Account");
 			builder.HasKey(a => a.Id);
 
+			builder.HasIndex(a => a.Name).IsUnique();
+
 			builder.HasOne(a => a.Incident)
 				.WithMany(i => i.Account)
 				.HasForeignKey(a => a.IncidentName);
