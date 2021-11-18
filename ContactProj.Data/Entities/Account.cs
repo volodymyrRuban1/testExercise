@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using ContactProj.Data.Entities;
 
 namespace ContactProj.Domain.Entities
 {

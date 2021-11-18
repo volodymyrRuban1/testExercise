@@ -11,7 +11,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ContactProj.Domain", "..\Co
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ContactProj.Application", "..\ContactProj.Domain\ContactProj.Application.csproj", "{BB245C0D-7C6D-48DF-BBDE-DCE6B835746B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ContactProj.Infrastructure", "..\Infrastructure\ContactProj.Infrastructure.csproj", "{34DA80ED-62B4-4FF3-9793-4A8D2A732315}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ContactProj.Infrastructure", "..\Infrastructure\ContactProj.Infrastructure.csproj", "{34DA80ED-62B4-4FF3-9793-4A8D2A732315}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

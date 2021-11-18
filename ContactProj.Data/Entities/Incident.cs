@@ -1,8 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations.Schema;
-using ContactProj.Domain.Entities;
 
-namespace ContactProj.Data.Entities
+namespace ContactProj.Domain.Entities
 {
 	public class Incident
 	{

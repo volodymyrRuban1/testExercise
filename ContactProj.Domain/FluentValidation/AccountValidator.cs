@@ -1,10 +1,8 @@
-﻿using System.Runtime.InteropServices.ComTypes;
-using ContactProj.Data.Context;
-using FluentValidation;
+﻿using FluentValidation;
 
-namespace ContactProj.Data.FluentValidation
+namespace ContactProj.Application.FluentValidation
 {
-	public class AccountValidator : AbstractValidator<Entities.Account>
+	public class AccountValidator : AbstractValidator<Domain.Entities.Account>
 	{
 		public AccountValidator()
 		{

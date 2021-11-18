@@ -1,5 +1,4 @@
-﻿using ContactProj.Data.Entities;
-using ContactProj.Domain.Entities;
+﻿using ContactProj.Domain.Entities;
 using ContactProj.Domain.EntityConfigurations;
 using Microsoft.EntityFrameworkCore;
 

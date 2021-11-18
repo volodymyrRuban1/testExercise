@@ -1,7 +1,4 @@
-﻿using System;
-using ContactProj.Domain.Entities;
-
-namespace ContactProj.Data.Entities
+﻿namespace ContactProj.Domain.Entities
 {
 	public class Contact
 	{

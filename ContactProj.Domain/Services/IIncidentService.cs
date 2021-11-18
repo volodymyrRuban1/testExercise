@@ -1,6 +1,4 @@
-﻿using System.Threading.Tasks;
-
-namespace ContactProj.Domain.Services
+﻿namespace ContactProj.Application.Services
 {
 	public interface IIncidentService
 	{
