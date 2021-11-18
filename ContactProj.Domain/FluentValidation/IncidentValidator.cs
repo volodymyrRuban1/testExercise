@@ -1,8 +1,8 @@
 ﻿using FluentValidation;
 
-namespace ContactProj.Data.FluentValidation
+namespace ContactProj.Application.FluentValidation
 {
-	public class IncidentValidator : AbstractValidator<Entities.Incident>
+	public class IncidentValidator : AbstractValidator<Domain.Entities.Incident>
 	{
 		
 	}
