@@ -1,4 +1,5 @@
-﻿using System.Threading.Tasks;
+﻿using System.Threading;
+using System.Threading.Tasks;
 using ContactProj.Application.Interfaces;
 using ContactProj.Domain.Entities;
 
@@ -6,9 +7,16 @@ namespace ContactProj.Infrastructure.Services
 {
 	class ContactServices : IContactService
 	{
-		public Task<bool> AddContactAsync(Contact contact)
+		private readonly IRepository<Contact> _contactRepository;
+		public ContactServices(IRepository<Contact> contactRepository)
 		{
-			throw new System.NotImplementedException();
+			_contactRepository = contactRepository;
+		}
+
+		public async Task<Contact> AddContactAsync(Contact contact)
+		{
+			var newContact = await _contactRepository.AddSync(contact);
+			return contact;
 		}
 	}
 }

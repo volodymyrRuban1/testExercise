@@ -5,6 +5,6 @@ namespace ContactProj.Application.Interfaces
 {
 	public interface IContactService
 	{
-		Task<bool> AddContactAsync(Contact contact);
+		Task<Contact> AddContactAsync(Contact contact);
 	}
 }

@@ -5,6 +5,6 @@ namespace ContactProj.Application.Interfaces
 {
 	public interface IAccountService
 	{
-		Task<bool> AddAccountAsync(Account account);
+		Task<Account> AddAccountAsync(Account account);
 	}
 }

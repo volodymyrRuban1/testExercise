@@ -7,9 +7,17 @@ namespace ContactProj.Infrastructure.Services
 {
 	class AccountServices : IAccountService
 	{
-		public Task<bool> AddAccountAsync(Account account)
+		private readonly IRepository<Account> _accountRepository;
+
+		public AccountServices(IRepository<Account> accountRepository)
 		{
-			throw new NotImplementedException();
+			_accountRepository = accountRepository;
+		}
+
+		public async Task<Account> AddAccountAsync(Account account)
+		{
+			var newAccount = await _accountRepository.AddSync(account);
+			return newAccount;
 		}
 	}
 }

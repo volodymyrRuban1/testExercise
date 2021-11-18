@@ -6,9 +6,17 @@ namespace ContactProj.Infrastructure.Services
 {
 	class IncidentServices : IIncidentService
 	{
-		public Task<bool> AddInicidentAsync(Incident incident)
+		private readonly IRepository<Incident> _incidentRepository;
+
+		public IncidentServices(IRepository<Incident> incidentRepository)
 		{
-			throw new System.NotImplementedException();
+			_incidentRepository = incidentRepository;
+		}
+
+		public async Task<Incident> AddIncidentAsync(Incident incident)
+		{
+			var newIncident = await _incidentRepository.AddSync(incident);
+			return newIncident;
 		}
 	}
 }

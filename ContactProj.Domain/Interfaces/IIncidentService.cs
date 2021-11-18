@@ -5,6 +5,6 @@ namespace ContactProj.Application.Interfaces
 {
 	public interface IIncidentService
 	{
-		Task<bool> AddInicidentAsync(Incident incident);
+		Task<Incident> AddIncidentAsync(Incident incident);
 	}
 }
