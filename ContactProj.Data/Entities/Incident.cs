@@ -5,7 +5,6 @@ namespace ContactProj.Domain.Entities
 {
 	public class Incident
 	{
-		[DatabaseGenerated(DatabaseGeneratedOption.Identity)]
 		public string Name { get; set; }
 
 		public string Description { get; set; }

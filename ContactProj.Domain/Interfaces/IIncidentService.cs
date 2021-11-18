@@ -1,9 +1,10 @@
 ﻿using System.Threading.Tasks;
+using ContactProj.Domain.Entities;
 
-namespace ContactProj.Domain.Services
+namespace ContactProj.Application.Interfaces
 {
 	public interface IIncidentService
 	{
-
+		Task<bool> AddInicidentAsync(Incident incident);
 	}
 }

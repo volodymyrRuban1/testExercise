@@ -25,9 +25,4 @@
     </PackageReference>
   </ItemGroup>
 
-  <ItemGroup>
-    <ProjectReference Include="..\ContactProj.UnitTests\ContactProj.UnitTests.csproj" />
-    <ProjectReference Include="..\Infrastructure\ContactProj.Infrastructure.csproj" />
-  </ItemGroup>
-
 </Project>
