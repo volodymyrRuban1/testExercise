@@ -1,15 +1,16 @@
-﻿using ContactProj.Data.Entities;
-using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
-namespace ContactProj.Data.EntityConfigurations
+namespace ContactProj.Domain.EntityConfigurations
 {
-	class IncidentConfiguration : IEntityTypeConfiguration<Incident>
+	class IncidentConfiguration : IEntityTypeConfiguration<Entities.Incident>
 	{
-		public void Configure(EntityTypeBuilder<Incident> builder)
+		public void Configure(EntityTypeBuilder<Entities.Incident> builder)
 		{
 			builder.ToTable("Incident");
 			builder.HasKey(i => i.Name);
+
+			builder.Property(i => i.Name).HasDefaultValueSql("NEWID()");
 		}
 	}
 }

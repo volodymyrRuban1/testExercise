@@ -1,4 +1,5 @@
 ﻿using System;
+using ContactProj.Domain.Entities;
 
 namespace ContactProj.Data.Entities
 {

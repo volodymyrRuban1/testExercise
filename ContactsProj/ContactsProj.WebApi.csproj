@@ -16,8 +16,9 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\ContactProj.Data\ContactProj.Data.csproj" />
-    <ProjectReference Include="..\ContactProj.Domain\ContactProj.Domain.csproj" />
+    <ProjectReference Include="..\ContactProj.Data\ContactProj.Domain.csproj" />
+    <ProjectReference Include="..\ContactProj.Domain\ContactProj.Application.csproj" />
+    <ProjectReference Include="..\Infrastructure\ContactProj.Infrastructure.csproj" />
   </ItemGroup>
 
 </Project>
