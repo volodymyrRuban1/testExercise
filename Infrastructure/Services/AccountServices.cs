@@ -1,15 +1,15 @@
-﻿using System;
-using System.Threading.Tasks;
+﻿using System.Threading.Tasks;
 using ContactProj.Application.Interfaces;
+using ContactProj.Application.RepositoriesInterfaces;
 using ContactProj.Domain.Entities;
 
 namespace ContactProj.Infrastructure.Services
 {
-	class AccountServices : IAccountService
+	public class AccountServices : IAccountService
 	{
-		private readonly IRepository<Account> _accountRepository;
+		private readonly IAccountRepository _accountRepository;
 
-		public AccountServices(IRepository<Account> accountRepository)
+		public AccountServices(IAccountRepository accountRepository)
 		{
 			_accountRepository = accountRepository;
 		}

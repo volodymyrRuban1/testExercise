@@ -33,9 +33,7 @@ namespace ContactsProj.WebApi
 				.AddFluentValidation(configuration =>
 					configuration.RegisterValidatorsFromAssemblyContaining<Startup>());
 
-			services.AddTransient<IValidator<Incident>, IncidentValidator>();
-			services.AddTransient<IValidator<Account>, AccountValidator>();
-			services.AddTransient<IValidator<Contact>, ContactValidator>();
+			services.AddHttpClient();
 
 			// Adding services
 			services.AddInfrastructure(Configuration);

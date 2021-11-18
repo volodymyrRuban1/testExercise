@@ -1,4 +1,9 @@
-﻿using System.Threading.Tasks;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Linq.Expressions;
+using System.Text;
+using System.Threading.Tasks;
 using ContactProj.Application.Interfaces;
 using ContactProj.Domain.Context;
 
@@ -7,17 +12,21 @@ namespace ContactProj.Infrastructure.Repository
 	public class Repository<TEntity> : IRepository<TEntity>
 		where TEntity : class
 	{
-		private readonly ContactProjContext _context;
+		protected readonly ContactProjContext DbContext;
 
-		public Repository(ContactProjContext context)
+		public Repository(ContactProjContext dbContext)
 		{
-			_context = context;
+			DbContext = dbContext;
 		}
+
 		public async Task<TEntity> AddSync(TEntity entity)
 		{
-			await _context.AddAsync(entity);
-			await _context.SaveChangesAsync();
-			return entity;
+			return (await DbContext.Set<TEntity>().AddAsync(entity)).Entity;
+		}
+
+		public async Task<int> SaveChangesAsync()
+		{
+			return await DbContext.SaveChangesAsync();
 		}
 	}
 }

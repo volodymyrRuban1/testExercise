@@ -8,7 +8,7 @@ namespace ContactProj.Domain.Context
 	{
 		public DbSet<Incident> Incidents { get; set; }
 		public DbSet<Account> Accounts { get; set; }
-		public DbSet<Account> Contacts { get; set; }
+		public DbSet<Contact> Contacts { get; set; }
 
 		public ContactProjContext(DbContextOptions options) : base(options)
 		{

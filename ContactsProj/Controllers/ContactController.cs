@@ -1,16 +1,24 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Threading.Tasks;
+using ContactProj.Application.Interfaces;
+using ContactProj.Domain.Entities;
 
 namespace ContactsProj.WebApi.Controllers
 {
+	[ApiController]
+	[Route("api/[controller]")]
 	public class ContactController : Controller
 	{
-		public IActionResult Index()
+		private readonly IContactService _contactService;
+		public ContactController(IContactService contactService)
 		{
-			return View();
+			_contactService = contactService;
+		}
+
+		[HttpPost]
+		public async Task<IActionResult> CreateContact([FromBody] Contact contact)
+		{
+			return Ok(await _contactService.AddContactAsync(contact));
 		}
 	}
 }

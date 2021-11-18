@@ -1,14 +1,15 @@
 ﻿using System.Threading.Tasks;
 using ContactProj.Application.Interfaces;
+using ContactProj.Application.RepositoriesInterfaces;
 using ContactProj.Domain.Entities;
 
 namespace ContactProj.Infrastructure.Services
 {
-	class IncidentServices : IIncidentService
+	public class IncidentServices : IIncidentService
 	{
-		private readonly IRepository<Incident> _incidentRepository;
+		private readonly IIncidentRepository _incidentRepository;
 
-		public IncidentServices(IRepository<Incident> incidentRepository)
+		public IncidentServices(IIncidentRepository incidentRepository)
 		{
 			_incidentRepository = incidentRepository;
 		}

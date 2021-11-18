@@ -8,6 +8,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\ContactProj.Data\ContactProj.Domain.csproj" />
     <ProjectReference Include="..\ContactProj.Domain\ContactProj.Application.csproj" />
   </ItemGroup>
 
