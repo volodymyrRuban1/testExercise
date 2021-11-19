@@ -13,7 +13,7 @@ namespace ContactProj.Infrastructure.Services
 		{
 			_accountRepository = accountRepository;
 		}
-
+			
 		public async Task<Account> AddAccountAsync(Account account)
 		{
 			var newAccount = await _accountRepository.AddSync(account);

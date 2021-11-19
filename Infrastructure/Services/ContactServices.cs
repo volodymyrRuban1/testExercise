@@ -15,17 +15,22 @@ namespace ContactProj.Infrastructure.Services
 
 		public async Task<Contact> AddContactAsync(Contact contact)
 		{
-			if (await IsContactExist(contact))
+			if (await IsAccountExistsAsync(contact))
 			{
-				return await ModifyContact(contact);
+				if (await IsContactExistAsync(contact))
+				{
+					return await ModifyContact(contact);
+				}
+
+				var newContact = await _contactRepository.AddSync(contact);
+				await _contactRepository.SaveChangesAsync();
+				return newContact;
 			}
 
-			var newContact = await _contactRepository.AddSync(contact);
-			await _contactRepository.SaveChangesAsync();
-			return newContact;
+			return null;
 		}
 
-		private async Task<bool> IsContactExist(Contact contact)
+		private async Task<bool> IsContactExistAsync(Contact contact)
 		{
 			var result = await _contactRepository.FindContactByEmailAsync(contact.Email);
 
@@ -46,6 +51,11 @@ namespace ContactProj.Infrastructure.Services
 			await _contactRepository.SaveChangesAsync();
 
 			return result;
+		}
+
+		private async Task<bool> IsAccountExistsAsync(Contact contact)
+		{
+			return await _contactRepository.FindAccountByIdAsync(contact.AccountId) is not null;
 		}
 	}
 }

@@ -10,5 +10,6 @@ namespace ContactProj.Infrastructure.Repository
 			:base(dbContext)
 		{
 		}
+
 	}
 }

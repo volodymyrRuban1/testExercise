@@ -19,5 +19,9 @@ namespace ContactProj.Infrastructure.Repository
 		{
 			return await DbContext.Contacts.FirstOrDefaultAsync(c => c.Email == email);
 		}
+		public async Task<Contact> FindAccountByIdAsync(int id)
+		{
+			return await DbContext.Contacts.FirstOrDefaultAsync(c => c.AccountId == id);
+		}
 	}
 }

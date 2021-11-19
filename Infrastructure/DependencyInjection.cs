@@ -7,7 +7,6 @@ using ContactProj.Infrastructure.Services;
 using FluentValidation;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.DependencyInjection.Extensions;
 
 namespace ContactProj.Infrastructure
 {

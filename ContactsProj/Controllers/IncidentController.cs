@@ -6,11 +6,9 @@ using System.Threading.Tasks;
 
 namespace ContactsProj.WebApi.Controllers
 {
+	[ApiController]
+	[Route("api/[controller]")]
 	public class IncidentController : Controller
 	{
-		public IActionResult Index()
-		{
-			return View();
-		}
 	}
 }

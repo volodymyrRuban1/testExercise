@@ -7,5 +7,7 @@ namespace ContactProj.Application.RepositoriesInterfaces
 	public interface IContactRepository : IRepository<Contact>
 	{
 		Task<Contact> FindContactByEmailAsync(string email);
+
+		Task<Contact> FindAccountByIdAsync(int id);
 	}
 }
