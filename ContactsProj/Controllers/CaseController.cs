@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using ContactProj.Application.Models;
-using ContactProj.Application.Services;
+using ContactProj.Application.ServicesInterfaces;
 
 namespace ContactsProj.WebApi.Controllers
 {
@@ -18,6 +18,11 @@ namespace ContactsProj.WebApi.Controllers
 			_caseService = caseService;
 		}
 
+		/// <summary>
+		/// Creates case, which includes incident, account and contact
+		/// </summary>
+		/// <param name="caseModel"></param>
+		/// <returns>Created CaseModel</returns>
 		[HttpPost]
 		public async Task<IActionResult> CreateCase([FromBody]CaseModel caseModel)
 		{

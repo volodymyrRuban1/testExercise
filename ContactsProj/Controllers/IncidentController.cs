@@ -16,6 +16,11 @@ namespace ContactsProj.WebApi.Controllers
 			_incidentService = incidentService;
 		}
 
+		/// <summary>
+		/// Creates incident
+		/// </summary>
+		/// <param name="incident"></param>
+		/// <returns>Created incident</returns>
 		[HttpPost]
 		public async Task<IActionResult> CreateIncident(Incident incident)
 		{

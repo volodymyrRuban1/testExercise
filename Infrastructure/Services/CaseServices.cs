@@ -3,8 +3,8 @@ using System.Threading.Tasks;
 using AutoMapper;
 using ContactProj.Application.Models;
 using ContactProj.Application.RepositoriesInterfaces;
-using ContactProj.Application.Services;
 using ContactProj.Application.Dto;
+using ContactProj.Application.ServicesInterfaces;
 using ContactProj.Domain.Entities;
 
 namespace ContactProj.Infrastructure.Services

@@ -1,10 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Linq.Expressions;
-using System.Text;
-using System.Threading.Tasks;
-using ContactProj.Application.Interfaces;
+﻿using System.Threading.Tasks;
+using ContactProj.Application.RepositoriesInterfaces;
 using ContactProj.Domain.Context;
 
 namespace ContactProj.Infrastructure.Repository
