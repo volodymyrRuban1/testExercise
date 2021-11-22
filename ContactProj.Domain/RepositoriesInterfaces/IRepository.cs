@@ -6,8 +6,10 @@ namespace ContactProj.Application.Interfaces
 {	
 	public interface IRepository<TEntity> where TEntity : class
 	{
-		Task<TEntity> AddSync(TEntity entity);
+		Task<TEntity> AddAsync(TEntity entity);
 
 		Task<int> SaveChangesAsync();
+
+		ValueTask<TEntity> FindByIdAsync(params object[] keys);
 	}
 }
