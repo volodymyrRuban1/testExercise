@@ -15,6 +15,11 @@ namespace ContactsProj.WebApi.Controllers
 			_contactService = contactService;
 		}
 
+		/// <summary>
+		/// Creates contact
+		/// </summary>
+		/// <param name="contact"></param>
+		/// <returns>Created contact</returns>
 		[HttpPost]
 		public async Task<IActionResult> CreateContact([FromBody] Contact contact)
 		{

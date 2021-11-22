@@ -1,5 +1,4 @@
 ﻿using System.Threading.Tasks;
-using ContactProj.Application.Services;
 using ContactProj.Domain.Entities;
 
 namespace ContactProj.Application.Models

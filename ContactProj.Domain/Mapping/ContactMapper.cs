@@ -2,7 +2,7 @@
 using ContactProj.Application.Dto;
 using ContactProj.Domain.Entities;
 
-namespace ContactProj.Application.Mapper
+namespace ContactProj.Application.Mapping
 {
 	public sealed class ContactMapper : Profile
 	{

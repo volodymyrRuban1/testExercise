@@ -1,7 +1,7 @@
 ﻿using System.Threading.Tasks;
 using ContactProj.Domain.Entities;
 
-namespace ContactProj.Application.Services
+namespace ContactProj.Application.ServicesInterfaces
 {
 	public interface IIncidentService
 	{

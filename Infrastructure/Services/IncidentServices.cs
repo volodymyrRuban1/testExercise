@@ -1,5 +1,5 @@
 ﻿using System.Threading.Tasks;
-using ContactProj.Application.Interfaces;
+using ContactProj.Application.ServicesInterfaces;
 using ContactProj.Application.RepositoriesInterfaces;
 using ContactProj.Domain.Entities;
 

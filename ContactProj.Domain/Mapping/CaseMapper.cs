@@ -5,7 +5,7 @@ using ContactProj.Domain.Entities;
 
 namespace ContactProj.Application.Mapping
 {
-	public class CaseMapper : Profile
+	public sealed class CaseMapper : Profile
 	{
 		public CaseMapper()
 		{
