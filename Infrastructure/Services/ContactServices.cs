@@ -5,29 +5,24 @@ using ContactProj.Domain.Entities;
 
 namespace ContactProj.Infrastructure.Services
 {
-	public class ContactServices : IContactService
+	public class ContactService : IContactService
 	{
 		private readonly IContactRepository _contactRepository;
-		public ContactServices(IContactRepository contactRepository)
+		public ContactService(IContactRepository contactRepository)
 		{
 			_contactRepository = contactRepository;
 		}
 
 		public async Task<Contact> AddContactAsync(Contact contact)
 		{
-			if (await IsAccountExistsAsync(contact))
-			{
 				if (await IsContactExistAsync(contact))
 				{
 					return await ModifyContact(contact);
 				}
 
-				var newContact = await _contactRepository.AddSync(contact);
+				var newContact = await _contactRepository.AddAsync(contact);
 				await _contactRepository.SaveChangesAsync();
 				return newContact;
-			}
-
-			return null;
 		}
 
 		private async Task<bool> IsContactExistAsync(Contact contact)
@@ -46,7 +41,6 @@ namespace ContactProj.Infrastructure.Services
 
 			result.FirstName = contact.FirstName;
 			result.LastName = contact.LastName;
-			result.AccountId = contact.AccountId;
 
 			await _contactRepository.SaveChangesAsync();
 

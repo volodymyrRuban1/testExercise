@@ -16,7 +16,7 @@ namespace ContactProj.Infrastructure.Services
 
 		public async Task<Incident> AddIncidentAsync(Incident incident)
 		{
-			var newIncident = await _incidentRepository.AddSync(incident);
+			var newIncident = await _incidentRepository.AddAsync(incident);
 			return newIncident;
 		}
 	}

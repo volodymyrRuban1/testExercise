@@ -6,7 +6,7 @@ namespace ContactProj.Domain.FluentValidation
 	{
 		public AccountValidator()
 		{
-
+			RuleFor(a => a.Contacts).NotNull();
 		}
 	}
 }

@@ -11,6 +11,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.OpenApi.Models;
+using Newtonsoft.Json;
 
 namespace ContactsProj.WebApi
 {
@@ -31,7 +32,11 @@ namespace ContactsProj.WebApi
 
 			services.AddControllers()
 				.AddFluentValidation(configuration =>
-					configuration.RegisterValidatorsFromAssemblyContaining<Startup>());
+					configuration.RegisterValidatorsFromAssemblyContaining<Startup>())
+				.AddNewtonsoftJson(
+					options => {
+						options.SerializerSettings.ReferenceLoopHandling = ReferenceLoopHandling.Ignore;
+					});
 
 			services.AddHttpClient();
 

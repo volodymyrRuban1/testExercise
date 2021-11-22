@@ -14,8 +14,7 @@ namespace ContactProj.Domain.EntityConfigurations
 			builder.HasIndex(a => a.Name).IsUnique();
 
 			builder.HasOne(a => a.Incident)
-				.WithMany(i => i.Account)
-				.HasForeignKey(a => a.IncidentName);
+				.WithMany(i => i.Account);
 		}
 	}
 }
