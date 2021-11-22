@@ -1,8 +1,6 @@
-﻿using System;
-using System.Linq.Expressions;
-using System.Threading.Tasks;
+﻿using System.Threading.Tasks;
 
-namespace ContactProj.Application.Interfaces
+namespace ContactProj.Application.RepositoriesInterfaces
 {	
 	public interface IRepository<TEntity> where TEntity : class
 	{
