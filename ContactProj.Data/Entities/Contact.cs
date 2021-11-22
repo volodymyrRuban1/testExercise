@@ -1,4 +1,6 @@
-﻿namespace ContactProj.Domain.Entities
+﻿using Newtonsoft.Json;
+
+namespace ContactProj.Domain.Entities
 {
 	public class Contact
 	{
@@ -11,7 +13,8 @@
 		public string Email { get; set; }
 
 		public int AccountId { get; set; }
-
-		public Account Accounts { get; set; }
+		
+		[JsonIgnore]
+		public Account Account { get; set; }
 	}
 }

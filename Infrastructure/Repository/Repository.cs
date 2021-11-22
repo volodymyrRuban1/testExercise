@@ -1,10 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Linq.Expressions;
-using System.Text;
-using System.Threading.Tasks;
-using ContactProj.Application.Interfaces;
+﻿using System.Threading.Tasks;
+using ContactProj.Application.RepositoriesInterfaces;
 using ContactProj.Domain.Context;
 
 namespace ContactProj.Infrastructure.Repository
@@ -19,7 +14,7 @@ namespace ContactProj.Infrastructure.Repository
 			DbContext = dbContext;
 		}
 
-		public async Task<TEntity> AddSync(TEntity entity)
+		public async Task<TEntity> AddAsync(TEntity entity)
 		{
 			return (await DbContext.Set<TEntity>().AddAsync(entity)).Entity;
 		}
@@ -28,5 +23,10 @@ namespace ContactProj.Infrastructure.Repository
 		{
 			return await DbContext.SaveChangesAsync();
 		}
+
+		public async ValueTask<TEntity> FindByIdAsync(params object[] keys) => 
+			await DbContext.FindAsync<TEntity>(keys);
+
+		public static bool IsEntityNull(TEntity entity) => entity is null;
 	}
 }

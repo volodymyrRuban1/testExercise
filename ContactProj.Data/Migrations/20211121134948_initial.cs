@@ -1,6 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore.Migrations;
 
-namespace ContactProj.Data.Migrations
+namespace ContactProj.Domain.Migrations
 {
     public partial class initial : Migration
     {
@@ -10,7 +10,7 @@ namespace ContactProj.Data.Migrations
                 name: "Incident",
                 columns: table => new
                 {
-                    Name = table.Column<string>(type: "nvarchar(450)", nullable: false),
+                    Name = table.Column<string>(type: "nvarchar(450)", nullable: false, defaultValueSql: "NEWID()"),
                     Description = table.Column<string>(type: "nvarchar(max)", nullable: true)
                 },
                 constraints: table =>

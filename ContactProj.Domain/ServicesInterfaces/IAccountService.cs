@@ -1,8 +1,7 @@
 ﻿using System.Threading.Tasks;
 using ContactProj.Application.Dto;
-using ContactProj.Domain.Entities;
 
-namespace ContactProj.Application.Interfaces
+namespace ContactProj.Application.ServicesInterfaces
 {
 	public interface IAccountService
 	{

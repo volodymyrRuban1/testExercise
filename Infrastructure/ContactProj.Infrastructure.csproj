@@ -8,6 +8,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="8.1.1" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\ContactProj.Data\ContactProj.Domain.csproj" />
     <ProjectReference Include="..\ContactProj.Domain\ContactProj.Application.csproj" />
   </ItemGroup>

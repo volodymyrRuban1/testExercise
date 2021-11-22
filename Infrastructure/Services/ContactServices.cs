@@ -1,5 +1,5 @@
 ﻿using System.Threading.Tasks;
-using ContactProj.Application.Interfaces;
+using ContactProj.Application.ServicesInterfaces;
 using ContactProj.Application.RepositoriesInterfaces;
 using ContactProj.Domain.Entities;
 
@@ -20,7 +20,7 @@ namespace ContactProj.Infrastructure.Services
 				return await ModifyContact(contact);
 			}
 
-			var newContact = await _contactRepository.AddSync(contact);
+			var newContact = await _contactRepository.AddAsync(contact);
 			await _contactRepository.SaveChangesAsync();
 			return newContact;
 		}

@@ -1,8 +1,8 @@
 ﻿using Microsoft.EntityFrameworkCore.Migrations;
 
-namespace ContactProj.Data.Migrations
+namespace ContactProj.Domain.Migrations
 {
-    public partial class changednamegeneration : Migration
+    public partial class addedfields : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {

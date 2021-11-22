@@ -11,9 +11,8 @@ namespace ContactProj.Domain.EntityConfigurations
 			builder.ToTable("Contact");
 			builder.HasKey(c => c.Id);
 
-			builder.HasOne(c => c.Accounts)
-				.WithMany(a => a.Contacts)
-				.HasForeignKey(c => c.AccountId);
+			builder.HasOne(c => c.Account)
+				.WithMany(a => a.Contacts);
 		}
 	}
 }
