@@ -11,26 +11,17 @@ namespace ContactProj.Infrastructure.Services
 {
 	public class CaseServices : ICaseService
 	{
-		private readonly IAccountRepository _accountRepository;
-		private readonly IContactRepository _contactRepository;
-		private readonly IIncidentRepository _incidentRepository;
 		private readonly IAccountService _accountService;
 		private readonly IContactService _contactService;
 		private readonly IIncidentService _incidentService;
 		private readonly IMapper _mapper;
 
 		public CaseServices(
-			//IAccountRepository accountRepository, 
-			//IContactRepository contactRepository, 
-			//IIncidentRepository incidentRepository,
 			IAccountService accountService,
 			IContactService contactService,
 			IIncidentService incidentService,
 			IMapper mapper)
 		{
-			//_accountRepository = accountRepository;
-			//_contactRepository = contactRepository;
-			//_incidentRepository = incidentRepository;
 			_accountService = accountService;
 			_contactService = contactService;
 			_incidentService = incidentService;
@@ -44,8 +35,8 @@ namespace ContactProj.Infrastructure.Services
 				return null;
 
 			var incident = _mapper.Map<CaseModel, Incident>(caseDto);
-			
-			var resIncident = await _incidentRepository.AddAsync(incident);
+
+			var resIncident = await _incidentService.AddIncidentAsync(incident);
 			
 			accountCreation.Account.IncidentName = incident.Name;
 
